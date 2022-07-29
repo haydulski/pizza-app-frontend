@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Jost';
+  src: url('../../public/fonts/Jost-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('../../public/fonts/Jost-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('../../public/fonts/Jost-Bold.ttf');
+  font-weight: 700;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+}
+
+@media(max-width:678px) {
+
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: url('../../public/main-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
