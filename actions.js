@@ -1,7 +1,7 @@
 import { CART } from './types'
 
 // INITIALIZES CLOCK ON SERVER
-export const addNewProduct = (product, costs) => (dispatch) => {
+export const addCustomProduct = (product, costs) => (dispatch) => {
     const pizzaData = {
         name: product.name || 'Custom pizza',
         id: product.id || '1x2x3x',

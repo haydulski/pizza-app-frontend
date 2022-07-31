@@ -4,8 +4,9 @@ import { serialize } from "cookie"
 export default async function handler(req, res) {
 
     const { cookies } = req;
-    const bearerToken = 'Bearer ' + cookies.jwt
+    if (!cookies.jwt) return res.status(401).json('you not logged')
 
+    const bearerToken = 'Bearer ' + cookies.jwt
     const ask = await axios.get('/api/user', {
         headers: {
             "Authorization": bearerToken

@@ -1,9 +1,9 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { axios } from '../../lib/axios'
+import { useDispatch } from 'react-redux'
 
 export async function getStaticPaths() {
     const res = await axios('api/pizza')
@@ -25,6 +25,25 @@ export async function getStaticProps({ params }) {
 }
 
 const Pizza = ({ data }) => {
+
+    const dispatch = useDispatch()
+
+    const product = {
+        name: data.name,
+        id: data.id,
+        is_custom: 0,
+        amount: 1,
+        price: data.price,
+        dough: 'medium',
+        dough_size: '30',
+        double_cheese: 'no',
+        ingredient_1: data.ingredient_1,
+        ingredient_2: data.ingredient_2,
+        ingredient_3: data.ingredient_3,
+        ingredient_4: data.ingredient_4,
+        ingredient_5: data.ingredient_5,
+        ingredient_6: data.ingredient_6,
+    }
 
     return (
         <div className='container max-w-7xl bg-light-gray py-20 px-10 mx-auto mt-12'>
@@ -49,8 +68,9 @@ const Pizza = ({ data }) => {
                     </ul>
 
                     <p className='price uppercase font-bold text-dark-orange text-5xl pt-10'>${data.price}</p>
-                    <button className='bg-red hover:bg-dark-orange p-4 rounded-xl text-green
-                     font-semibold text-3xl mt-40 ml-[50%]'>
+                    <button className='bg-red hover:bg-dark-orange p-4 rounded-xl text-gray-200
+                     font-semibold text-3xl mt-40 ml-[50%]'
+                        onClick={() => dispatch({ type: 'ADD_ITEM', payload: product })}>
                         Add to order
                     </button>
                 </div>

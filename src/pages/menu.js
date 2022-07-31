@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import SingleItem from '../components/singleMenuItem'
+import SingleItem from '../components/SingleMenuItem'
 import { axios } from '../lib/axios'
 
 export async function getStaticProps() {
@@ -13,10 +13,6 @@ export async function getStaticProps() {
 
 
 const Menu = ({ data }) => {
-
-    useEffect(() => {
-        console.log(data);
-    }, [])
 
     const items = () => {
         return data.map(item => {

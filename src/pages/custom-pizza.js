@@ -4,9 +4,9 @@ import axios from 'axios'
 import img from '../../public/landing-img-min.png'
 import Inputs from '../components/CustomizerInputs'
 import { connect } from 'react-redux'
-import { addNewProduct } from '@/../actions'
+import { addCustomProduct } from '@/../actions'
 
-const Custom = ({ addNewProduct }) => {
+const Custom = ({ addCustomProduct }) => {
 
     const [order, setOrder] = useState({
         isCustom: 1,
@@ -128,7 +128,7 @@ const Custom = ({ addNewProduct }) => {
 
     // order 
     const placeOrder = () => {
-        addNewProduct(order, costs)
+        addCustomProduct(order, costs)
     }
 
     return (
@@ -184,4 +184,4 @@ const Custom = ({ addNewProduct }) => {
     );
 }
 
-export default connect((state) => { return state }, { addNewProduct })(Custom);
+export default connect((state) => { return state }, { addCustomProduct })(Custom);
