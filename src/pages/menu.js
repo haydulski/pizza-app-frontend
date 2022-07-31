@@ -20,7 +20,7 @@ const Menu = ({ data }) => {
 
     const items = () => {
         return data.map(item => {
-            return <SingleItem imgSrc={item.thumbnail} title={item.name} price={item.price} slug={item.slug} />
+            return <SingleItem key={item.id} imgSrc={item.thumbnail} title={item.name} price={item.price} slug={item.slug} />
         })
     }
     return (
