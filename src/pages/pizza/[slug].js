@@ -26,8 +26,6 @@ export async function getStaticProps({ params }) {
 
 const Pizza = ({ data }) => {
 
-    console.log(data);
-
     return (
         <div className='container max-w-7xl bg-light-gray py-20 px-10 mx-auto mt-12'>
             <h1 className='text-orange font-semibold uppercase sm:text-4xl md:text-5xl xl:text-6xl'>{data.name}</h1>

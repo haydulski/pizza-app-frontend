@@ -2,13 +2,15 @@ import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
 import img from '../../public/landing-img-min.png'
-import Inputs from '../components/customizerInputs'
+import Inputs from '../components/CustomizerInputs'
 import { connect } from 'react-redux'
 import { addNewProduct } from '@/../actions'
 
 const Custom = ({ addNewProduct }) => {
 
     const [order, setOrder] = useState({
+        isCustom: 1,
+        amount: 1,
         dough: null,
         doughSize: null,
         doubleCheese: null,
@@ -21,7 +23,6 @@ const Custom = ({ addNewProduct }) => {
     const fetchIngredients = async () => {
         axios.get('/api/ingredients')
             .then(res => {
-                console.log(res.data);
                 setIng(res.data)
             })
             .catch((err) => console.log(err.message))
@@ -82,7 +83,6 @@ const Custom = ({ addNewProduct }) => {
         if (order.ingredients.length > 0) {
             ingCosts = order.ingredients.reduce((acc, ing) => { return acc + (ing.cost * ing.qty) }, 0)
             base += ingCosts
-            console.log(order.ingredients);
         }
         setCosts(base);
     }
@@ -90,9 +90,9 @@ const Custom = ({ addNewProduct }) => {
     // display functions
 
     const displayIng = (ings) => {
-        return ings.map((i, key) => {
+        return ings.map(i => {
             return (
-                <div id={i.id} key={key}
+                <div id={i.id} key={i.id}
                     className='bg-gray-100 px-4 py-5 sm:grid
                  sm:grid-cols-3 sm:gap-4 sm:px-6 border-b-2'>
                     <p>{i.id}</p>
@@ -126,6 +126,11 @@ const Custom = ({ addNewProduct }) => {
         })
     }
 
+    // order 
+    const placeOrder = () => {
+        addNewProduct(order, costs)
+    }
+
     return (
         <div className="max-w-7xl mx-auto bg-light-gray mt-12 px-10 py-20 shadow-2xl mb-40 rounded-md">
             <h1 className='lg:text-6xl md:text-4xl font-semibold text-dark-orange uppercase'>YOUR CUSTOM PIZZA GENERATOR
@@ -154,11 +159,11 @@ const Custom = ({ addNewProduct }) => {
                         <dl>
                             {ing && ing.map(cat => {
                                 return (
-                                    <>
-                                        <h5 key={cat.id} className='ml-6 text-lg font-semibold font-red py-2
+                                    <div key={cat.id}>
+                                        <h5 className='ml-6 text-lg font-semibold font-red py-2
                                          capitalize'>{cat.category}</h5>
                                         {displayIng(cat.ingredients)}
-                                    </>
+                                    </div>
                                 )
                             })}
                         </dl>
@@ -172,11 +177,11 @@ const Custom = ({ addNewProduct }) => {
             </div>
             <div className='text-right'>
                 <button className='font-semibold text-light-gray hover:bg-dark-orange transition duration-100
-                     bg-red text-3xl py-2 px-4 rounded-md mt-20' onClick={() => addNewProduct(order, costs)}>
+                     bg-red text-3xl py-2 px-4 rounded-md mt-20' onClick={placeOrder}>
                     Order your pizza!</button>
             </div>
         </div>
     );
 }
 
-export default connect(() => { }, { addNewProduct })(Custom);
+export default connect((state) => { return state }, { addNewProduct })(Custom);

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
 
+
 const Navbar = ({ isOpen, menuAction }) => {
     const nav = useRef()
 

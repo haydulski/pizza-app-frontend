@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Logo from '../../../public/logo-min.png'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
+import MiniCart from '../MiniCart.js.js'
 
 const Layout = ({ children }) => {
 
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
                         className='cursor-pointer ' />
                 </div>
                 <Navbar isOpen={openNav} menuAction={handleMenu} />
+                <MiniCart />
             </header>
 
             <main>
