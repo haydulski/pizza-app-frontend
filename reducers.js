@@ -2,7 +2,6 @@ import { combineReducers } from 'redux'
 import { CART } from './types'
 
 // cart reducer
-
 const initialState = {
     orderedItems: [],
     total_price: 0
@@ -23,12 +22,14 @@ const cartReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 total_price: price
             }
+        case CART.RESET_CART:
+            return {
+                ...initialState
+            }
         default:
             return state
     }
 }
-
-
 
 // COMBINED REDUCERS
 const reducers = {

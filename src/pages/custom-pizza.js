@@ -178,7 +178,7 @@ const Custom = ({ addCustomProduct }) => {
             <div className='text-right'>
                 <button className='font-semibold text-light-gray hover:bg-dark-orange transition duration-100
                      bg-red text-3xl py-2 px-4 rounded-md mt-20' onClick={placeOrder}>
-                    Order your pizza!</button>
+                    Add to cart</button>
             </div>
         </div>
     );

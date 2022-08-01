@@ -8,7 +8,7 @@ export async function getStaticProps() {
     const data = await res.data
 
     // Pass data to the page via props
-    return { props: { data }, revalidate: 10 }
+    return { props: { data }, revalidate: 60 }
 }
 
 

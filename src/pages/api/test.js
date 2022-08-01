@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { axios } from "../../lib/axios"
 import { serialize } from "cookie"
 
@@ -14,6 +13,7 @@ export default async function handler(req, res) {
             httpOnly: true,
             maxAge: 60 * 60,
             sameSite: 'strict',
+            path: '/api'
 
         })
 

@@ -4,8 +4,11 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useRouter } from 'next/router'
 
+import UserUpdate from '@/components/UserUpdateModal'
+
 const Account = () => {
     const [user, setUser] = useState(null)
+    const [modal, setModal] = useState(0)
     const router = useRouter()
 
     useEffect(() => {
@@ -14,6 +17,19 @@ const Account = () => {
             .catch(err => router.push('/login'))
 
     }, [])
+
+    const handleLogout = () => {
+        axios.post('api/logout')
+            .then(res => {
+                return router.push('/login')
+            })
+            .catch(err => console.log(err.message))
+    }
+
+    const refreshPage = () => {
+        setModal(0)
+        router.reload()
+    }
 
     if (user === null) return (
         <div className="max-w-7xl mx-auto bg-light-gray mt-10 px-8 py-20">
@@ -43,8 +59,29 @@ const Account = () => {
                 </div>
                 <div className="bg-green rounded-md shadow-lg text-dark-orange w-1/2 p-4">
                     <h2 className='text-2xl font-semibold'>Orders:</h2>
+                    <ul className="list-none">
+                        {user.orders.map(or => {
+                            return (
+                                <li key={or.id} className='my-4 border-b-2 border-light-gray font-semibold'>
+                                    Order id: {or.id} <span className='ml-[30%]'>Total cost:  ${or.total_price}</span>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
             </div>
+            <div className="mt-8 py-4">
+                <button className='bg-dark-orange px-4 py-2 text-gray-100 text-regular rounded-md'
+                    onClick={handleLogout}>
+                    Logout
+                </button>
+                <button className='bg-dark-orange px-4 py-2 text-gray-100
+                 text-regular rounded-md ml-2'
+                    onClick={() => modal === 0 ? setModal(1) : setModal(0)}>
+                    Modify your data
+                </button>
+            </div>
+            {modal === 1 && <UserUpdate isUpdate={refreshPage} hide={setModal} />}
         </div>
     );
 }

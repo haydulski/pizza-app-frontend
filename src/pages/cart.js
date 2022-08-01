@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { removeProduct } from '@/../actions'
+import { removeProduct, resetCart } from '@/../actions'
+import axios from 'axios'
 
-const Cart = ({ cart, removeProduct }) => {
+const Cart = ({ cart, removeProduct, resetCart }) => {
 
     useEffect(() => { }, [cart])
 
@@ -11,6 +12,20 @@ const Cart = ({ cart, removeProduct }) => {
     const showIng = (ing) => {
         if (ing instanceof Object) return ing.name
         return ing
+    }
+
+    const placeOrder = () => {
+        const data = {
+            total_price: cart.total_price,
+            ordered_items: cart.orderedItems
+        }
+
+        axios.post('/api/place-order', data)
+            .then(res => {
+                console.log(res.data)
+                if (res.status === 200) resetCart()
+            })
+            .catch(err => console.log(err.message))
     }
 
     return (
@@ -41,6 +56,12 @@ const Cart = ({ cart, removeProduct }) => {
                     })}
                 </ul>
             </div>
+            <div className="pt-4 mt-8">
+                {cart.total_price > 0 &&
+                    <button className='px-4 py-2 bg-red text-gray-100 hover:bg-dark-orange'
+                        onClick={placeOrder}>Place order</button>
+                }
+            </div>
         </div>
 
 
@@ -49,4 +70,4 @@ const Cart = ({ cart, removeProduct }) => {
 
 export default connect(state => ({
     cart: state.cart
-}), { removeProduct })(Cart);
+}), { removeProduct, resetCart })(Cart);

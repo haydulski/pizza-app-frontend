@@ -30,7 +30,7 @@ const Pizza = ({ data }) => {
 
     const product = {
         name: data.name,
-        id: data.id,
+        pizza_id: data.id,
         is_custom: 0,
         amount: 1,
         price: data.price,
