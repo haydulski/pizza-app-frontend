@@ -3,9 +3,9 @@ import axios from 'axios'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useRouter } from 'next/router'
-import { displayMessage } from '@/lib/displayMessage'
+import { displayMessage } from '../lib/displayMessage'
 
-import UserUpdate from '@/components/UserUpdateModal'
+import UserUpdate from '../components/userUpdateModal'
 
 const Account = () => {
     const [user, setUser] = useState(null)

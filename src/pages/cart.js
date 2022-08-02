@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { removeProduct, resetCart } from '@/../actions'
+import { removeProduct, resetCart } from '../../actions'
 import axios from 'axios'
-import { displayMessage } from '@/lib/displayMessage'
+import { displayMessage } from '../lib/displayMessage'
 
 const Cart = ({ cart, removeProduct, resetCart }) => {
 
