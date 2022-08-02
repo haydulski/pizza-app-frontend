@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/index'
 import { Provider } from 'react-redux'
 import { useStore } from '../../store'
 import Router from 'next/router'
