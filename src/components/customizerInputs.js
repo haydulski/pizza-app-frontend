@@ -61,4 +61,4 @@ const CustomizerInputs = ({ handleOrder }) => {
     );
 }
 
-export default Inputs;
+export default CustomizerInputs;

@@ -3,8 +3,9 @@ import Image from 'next/image'
 import Logo from '../../../public/logo-min.png'
 import Navbar from '../navbar'
 import MiniCart from '../miniCart.js'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import Head from 'next/head'
 
 const Layout = ({ children }) => {
 
@@ -15,6 +16,9 @@ const Layout = ({ children }) => {
 
     return (
         <div className='min-h-screen'>
+            <Head>
+                <script src="https://cdn.tailwindcss.com"></script>
+            </Head>
             <header className="max-screen">
                 <div className='max-w-3xl mx-auto pt-10 text-center
                  hover:scale-105 transition-translate duration-300 relative z-50 mb-40 lg:mb-0'>
