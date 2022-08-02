@@ -27,7 +27,6 @@ const Custom = ({ addCustomProduct }) => {
             .then(res => {
                 setIng(res.data)
             })
-            .catch((err) => console.log(err.message))
     }
 
     useEffect(() => {

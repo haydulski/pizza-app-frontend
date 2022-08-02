@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['assets.acme.com', 'www.oetker.pl', 'localhost'],
+    domains: ['pizza.obrazkontrolny.pl', 'localhost'],
   },
 }
 

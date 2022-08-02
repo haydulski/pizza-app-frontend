@@ -37,7 +37,6 @@ const UserUpdate = ({ isUpdate, hide }) => {
                 if (res.status === 200) return isUpdate()
                 displayMessage('Wrong data provide', true)
             })
-            .catch(err => console.log(err.message))
     }
 
     return (

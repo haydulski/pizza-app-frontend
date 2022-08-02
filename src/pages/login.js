@@ -20,7 +20,6 @@ const Login = () => {
                 }
                 displayMessage('Wrong email or password', true)
             })
-            .catch(err => console.log(err.message))
     }
 
     const handleForm = (e) => {

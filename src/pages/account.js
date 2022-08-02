@@ -15,7 +15,6 @@ const Account = () => {
     useEffect(() => {
         axios.get('api/user')
             .then(res => setUser(res.data))
-            .catch(err => console.log(err.message))
     }, [])
 
     const handleLogout = () => {
@@ -23,14 +22,12 @@ const Account = () => {
             .then(res => {
                 return router.push('/login')
             })
-            .catch(err => console.log(err.message))
     }
 
     const refreshPage = () => {
         setModal(0)
         axios.get('api/user')
             .then(res => setUser(res.data))
-            .catch(err => console.log(err.message))
         displayMessage('Your presonal data was updated')
     }
 

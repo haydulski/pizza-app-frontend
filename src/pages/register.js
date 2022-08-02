@@ -24,14 +24,14 @@ const Register = () => {
         axios.post('api/register', form)
             .then(res => {
                 if (res.status === 200) return router.push('/account')
-                console.log(res.data)
+
             })
-            .catch(err => console.log(err))
+        // .catch(err => console.log(err))
     }
 
     const formChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value.toString() })
-        console.log(form);
+        // console.log(form);
     }
 
     return (
