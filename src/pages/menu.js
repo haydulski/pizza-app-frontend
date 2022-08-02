@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import SingleMenuItem from '../components/SingleMenuItem'
+import SingleMenuItem from '../components/singleMenuItem'
 import { axios } from '../lib/axios'
 
 export async function getStaticProps() {
