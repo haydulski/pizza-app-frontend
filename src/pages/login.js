@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { displayMessage } from '@/lib/displayMessage'
+import { displayMessage } from '../lib/displayMessage'
 
 const Login = () => {
 

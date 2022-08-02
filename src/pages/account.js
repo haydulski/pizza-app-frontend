@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { useRouter } from 'next/router'
 import { displayMessage } from '../lib/displayMessage'
 
-import UserUpdate from '../components/userUpdateModal'
+import UserUpdate from '../components/UserUpdateModal'
 
 const Account = () => {
     const [user, setUser] = useState(null)
