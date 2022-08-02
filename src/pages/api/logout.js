@@ -8,6 +8,12 @@ export default async function handler(req, res) {
             expires: new Date(0),
             path: '/api'
         }
+        ),
+        serialize(
+            'vendor', '', {
+            expires: new Date(0),
+            path: '/'
+        }
         )
     ]);
 

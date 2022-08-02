@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useRouter } from 'next/router'
+import { displayMessage } from '@/lib/displayMessage'
 
 const UserUpdate = ({ isUpdate, hide }) => {
 
@@ -35,7 +35,7 @@ const UserUpdate = ({ isUpdate, hide }) => {
         axios.post('api/user-update', data)
             .then(res => {
                 if (res.status === 200) return isUpdate()
-                console.log(res.data)
+                displayMessage('Wrong data provide', true)
             })
             .catch(err => console.log(err.message))
     }

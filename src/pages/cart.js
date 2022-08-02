@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { removeProduct, resetCart } from '@/../actions'
 import axios from 'axios'
+import { displayMessage } from '@/lib/displayMessage'
 
 const Cart = ({ cart, removeProduct, resetCart }) => {
 
@@ -22,10 +23,12 @@ const Cart = ({ cart, removeProduct, resetCart }) => {
 
         axios.post('/api/place-order', data)
             .then(res => {
-                console.log(res.data)
-                if (res.status === 200) resetCart()
+                if (res.status === 200) {
+                    resetCart()
+                    return displayMessage('Order with id: ' + res.data + ' was accepted.')
+                }
             })
-            .catch(err => console.log(err.message))
+            .catch(err => displayMessage('You have to log in', true))
     }
 
     return (
@@ -58,7 +61,7 @@ const Cart = ({ cart, removeProduct, resetCart }) => {
             </div>
             <div className="pt-4 mt-8">
                 {cart.total_price > 0 &&
-                    <button className='px-4 py-2 bg-red text-gray-100 hover:bg-dark-orange'
+                    <button className='px-4 py-2 bg-red text-gray-100 hover:bg-dark-orange rounded-md'
                         onClick={placeOrder}>Place order</button>
                 }
             </div>

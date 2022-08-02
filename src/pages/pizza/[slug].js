@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { axios } from '../../lib/axios'
 import { useDispatch } from 'react-redux'
+import { displayMessage } from '@/lib/displayMessage'
 
 export async function getStaticPaths() {
     const res = await axios('api/pizza')
@@ -47,7 +48,7 @@ const Pizza = ({ data }) => {
 
     return (
         <div className='container max-w-7xl bg-light-gray py-20 px-10 mx-auto mt-12'>
-            <h1 className='text-orange font-semibold uppercase sm:text-4xl md:text-5xl xl:text-6xl'>{data.name}</h1>
+            <h1 className='text-orange font-semibold uppercase text-4xl lg:text-6xl'>{data.name}</h1>
             <div className='desc grid gap-2 lg:grid-cols-2 md:grid-cols-1 p-4  mt-10'>
                 <div className='pizza-image min-h-[500px]  pr-4 flex items-center
                  rounded-md overflow-hidden'>
@@ -69,8 +70,11 @@ const Pizza = ({ data }) => {
 
                     <p className='price uppercase font-bold text-dark-orange text-5xl pt-10'>${data.price}</p>
                     <button className='bg-red hover:bg-dark-orange p-4 rounded-xl text-gray-200
-                     font-semibold text-3xl mt-40 ml-[50%]'
-                        onClick={() => dispatch({ type: 'ADD_ITEM', payload: product })}>
+                     font-semibold text-xl lg:text-3xl mt-40 ml-[50%]'
+                        onClick={() => {
+                            dispatch({ type: 'ADD_ITEM', payload: product })
+                            displayMessage("product added to cart!")
+                        }}>
                         Add to order
                     </button>
                 </div>

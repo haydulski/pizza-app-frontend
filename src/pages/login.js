@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { displayMessage } from '@/lib/displayMessage'
 
 const Login = () => {
 
@@ -14,8 +15,10 @@ const Login = () => {
     const handleLogin = async () => {
         axios.post('api/login', form)
             .then(res => {
-                if (res.status === 200) return route.push('/account')
-                console.log(res.data)
+                if (res.status === 200) {
+                    return route.push('/account')
+                }
+                displayMessage('Wrong email or password', true)
             })
             .catch(err => console.log(err.message))
     }
