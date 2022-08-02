@@ -4,8 +4,8 @@ import axios from 'axios'
 import img from '../../public/landing-img-min.png'
 import Inputs from '../components/CustomizerInputs'
 import { connect } from 'react-redux'
-import { addCustomProduct } from '@/../actions'
-import { displayMessage } from '@/lib/displayMessage'
+import { addCustomProduct } from '../../actions'
+import { displayMessage } from '../lib/displayMessage'
 
 const Custom = ({ addCustomProduct }) => {
 
@@ -27,7 +27,6 @@ const Custom = ({ addCustomProduct }) => {
             .then(res => {
                 setIng(res.data)
             })
-            .catch((err) => console.log(err.message))
     }
 
     useEffect(() => {

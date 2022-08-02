@@ -8,7 +8,7 @@ const MiniCart = () => {
     const items = cart.orderedItems?.length
 
     useEffect(() => {
-        console.log(items);
+
     }, [items])
 
     return (

@@ -2,8 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const SingleItem = ({ imgSrc, title, price, slug }) => {
-
+const SingleMenuItem = ({ imgSrc, title, price, slug }) => {
 
     return (
         <div className='single-item
@@ -24,4 +23,4 @@ const SingleItem = ({ imgSrc, title, price, slug }) => {
     );
 }
 
-export default SingleItem;
+export default SingleMenuItem;

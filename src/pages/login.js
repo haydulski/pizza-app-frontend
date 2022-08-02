@@ -16,11 +16,10 @@ const Login = () => {
         axios.post('api/login', form)
             .then(res => {
                 if (res.status === 200) {
-                    return route.push('/account')
+                    route.push('/account')
                 }
                 displayMessage('Wrong email or password', true)
             })
-            .catch(err => console.log(err.message))
     }
 
     const handleForm = (e) => {

@@ -3,9 +3,9 @@ import axios from 'axios'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useRouter } from 'next/router'
-import { displayMessage } from '@/lib/displayMessage'
+import { displayMessage } from '../lib/displayMessage'
 
-import UserUpdate from '@/components/UserUpdateModal'
+import UserUpdate from '../components/UserUpdateModal'
 
 const Account = () => {
     const [user, setUser] = useState(null)
@@ -15,7 +15,6 @@ const Account = () => {
     useEffect(() => {
         axios.get('api/user')
             .then(res => setUser(res.data))
-            .catch(err => console.log(err.message))
     }, [])
 
     const handleLogout = () => {
@@ -23,14 +22,12 @@ const Account = () => {
             .then(res => {
                 return router.push('/login')
             })
-            .catch(err => console.log(err.message))
     }
 
     const refreshPage = () => {
         setModal(0)
         axios.get('api/user')
             .then(res => setUser(res.data))
-            .catch(err => console.log(err.message))
         displayMessage('Your presonal data was updated')
     }
 
