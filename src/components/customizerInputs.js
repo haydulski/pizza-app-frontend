@@ -2,7 +2,7 @@ import React from 'react'
 
 const radioCss = 'form-radio rounded border-gray-100 text-orange shadow-sm focus:border-orange focus:ring focus:ring-offset-0 focus:ring-orange focus:ring-opacity-50';
 
-const Inputs = ({ handleOrder }) => {
+const CustomizerInputs = ({ handleOrder }) => {
     return (
         <div>
             <h3 className='text-2xl text-dark-orange font-semibold'>Dough:</h3>
