@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { displayMessage } from '@/lib/displayMessage'
+import { displayMessage } from '../lib/displayMessage'
 
 const UserUpdate = ({ isUpdate, hide }) => {
 
