@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Layout = ({ children }) => {
 
-    const [openNav, setnav] = useState('close');
+    const [openNav, setnav] = useState('open');
     const handleMenu = () => {
         setnav(openNav === 'open' ? 'close' : 'open');
     }
