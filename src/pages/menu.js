@@ -22,7 +22,7 @@ const Menu = ({ data }) => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto bg-orange px-10 py-20 rounded-md mt-20 shadow-2xl mb-48">
+        <div className="max-w-7xl mx-auto bg-orange px-2 lg:px-10 py-20 rounded-md mt-20 shadow-2xl mb-48">
             <Head>
                 <title>Pizza | Menu</title>
                 <meta name="description" content="Pizza menu. Find your best pizza for meal"></meta>

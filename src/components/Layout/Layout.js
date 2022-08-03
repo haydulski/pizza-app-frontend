@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
         <div className='min-h-screen'>
             <header className="max-screen">
                 <div className='max-w-3xl mx-auto pt-10 text-center
-                 hover:scale-105 transition-translate duration-300 relative z-50 mb-40 lg:mb-0'>
+                 hover:scale-105 transition-translate duration-300 relative z-50 mb-20 lg:mb-0'>
                     <Image src={Logo} alt="site logo"
                         onClick={handleMenu}
                         className='cursor-pointer ' />

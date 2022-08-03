@@ -19,7 +19,7 @@ const Login = () => {
                     return route.reload()
                 }
                 displayMessage('Wrong email or password', true)
-            })
+            }).catch(err => displayMessage('Connection error', true))
     }
 
     const handleForm = (e) => {

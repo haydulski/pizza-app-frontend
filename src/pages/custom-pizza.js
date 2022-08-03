@@ -147,7 +147,7 @@ const Custom = ({ addCustomProduct }) => {
                 <div className='col1 min-w-full md:min-w-[50%] lg:min-w-[25%]  border-r-2 pr-2 border-orange'>
                     <Inputs handleOrder={handleOrder} />
                 </div>
-                <div className='col2 min-w-full md:min-w-[50%] lg:min-w-[25%] relative my-8 pb-8'>
+                <div className='col2 min-w-full md:min-w-[50%] lg:min-w-[25%] relative my-8 pb-8 min-h-[200px]'>
                     <button className='bg-dark-orange font-semibold
                      text-2xl capitalize text-light-gray py-2 px-8 ml-10 block
                      transition-color duration-100 hover:bg-red rounded-md' onClick={showAdd}>
@@ -161,7 +161,7 @@ const Custom = ({ addCustomProduct }) => {
                     </div>
                     <div ref={modal} className="modal rounded-md shadow-3xl
                      bg-white fixed top-40 w-[400px] max-h-96 overflow-x-hidden
-                      left-1/2 -translate-x-1/2 z-50 hidden overscroll-y-auto">
+                      left-1/2 -translate-x-1/2 z-50 hidden overscroll-y-auto ">
                         <span onClick={showAdd} className='ml-[90%] pt-4 font-semibold
                          cursor-pointer text-red block'>X</span>
                         <dl>

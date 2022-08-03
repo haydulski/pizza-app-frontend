@@ -32,15 +32,15 @@ const Navbar = ({ isOpen, menuAction }) => {
             <div ref={nav}
                 onMouseEnter={mouseEnter}
                 onMouseLeave={mouseLeave}
-                className='navbar bg-dark-orange max-w-[400px] min-w-[400px]
-             py-8 pl-8 pr-16 rounded-md -rotate-6
-             fixed top-[30%] -translate-x-96 z-50 shadow-3xl
+                className='navbar bg-dark-orange max-w-[400px] min-w-[300px] lg:min-w-[400px]
+             py-8 pl-8 pr-8 lg:pr-16 rounded-md rotate-0 lg:-rotate-6
+             fixed top-[20%] lg:top-[30%] -translate-x-96 z-50 shadow-3xl
              transition-translate duration-300
-             '>
+             ' >
                 <ul className='text-red text-3xl font-semibold leading-[4rem]
-                 uppercase text-right'>
+                 uppercase text-right' onClick={menuAction}>
                     <li className='hover:text-light-gray transition-colors duration-500 cursor-pointer'>
-                        <Link href="/">
+                        <Link href="/" >
                             <a>home</a>
                         </Link>
                     </li>
@@ -57,6 +57,12 @@ const Navbar = ({ isOpen, menuAction }) => {
                     <li className='hover:text-light-gray transition-colors duration-500 cursor-pointer'>
                         <Link href="/account">
                             <a>my account</a>
+                        </Link>
+                    </li>
+                    <li className='hover:text-light-gray transition-colors duration-500 cursor-pointer
+                    block lg:hidden'>
+                        <Link href="/cart">
+                            <a>cart</a>
                         </Link>
                     </li>
                 </ul>

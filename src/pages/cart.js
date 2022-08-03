@@ -33,7 +33,7 @@ const Cart = ({ cart, removeProduct, resetCart }) => {
     }
 
     return (
-        <div className="text-2xl px-8 py-20 max-w-7xl mx-auto mt-8 rounded-md bg-light-gray shadow-xl">
+        <div className="text-2xl px-2 lg:px-8 py-20 max-w-7xl mx-auto mt-8 rounded-md bg-light-gray shadow-xl">
             <Head>
                 <title>Pizza | cart</title>
                 <meta name="description" content="Your cart details"></meta>
@@ -44,7 +44,7 @@ const Cart = ({ cart, removeProduct, resetCart }) => {
                 <ul className='list-none pt-4'>
                     {items && items.map((it, key) => {
                         return (
-                            <li key={key} id={key} className='flex justify-between my-4'>
+                            <li key={key} id={key} className='flex justify-between my-4 flex-col gap-10 lg:gap-2 lg:flex-row'>
                                 <div className='w-1/2'>
                                     <h4>{it.name || 'Custom pizza ' + key}</h4>
                                     <p className='text-sm text-gray-500'>(

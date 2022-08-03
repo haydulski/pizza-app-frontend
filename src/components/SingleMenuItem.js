@@ -7,7 +7,7 @@ const SingleMenuItem = ({ imgSrc, title, price, slug }) => {
     return (
         <div className='single-item
          min-w-[200px] lg:min-w-[500px] min-h-[500px] overflow-hidden
-        bg-light-gray relative rounded-md shadow-lg'>
+        bg-light-gray relative rounded-md shadow-lg mb-20'>
             <Image src={imgSrc} width='500' height='500' layout="fill" objectFit="cover" />
             <div className="desc absolute bottom-[10%]
              -left-2 min-w-[120%] bg-dark-orange

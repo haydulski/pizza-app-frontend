@@ -28,9 +28,8 @@ const Register = () => {
         axios.post('api/register', form)
             .then(res => {
                 if (res.status === 200) return router.reload()
-
-            })
-        // .catch(err => console.log(err))
+                displayMessage('Check is your data corect', true)
+            }).catch(err => displayMessage('Connection error', true))
     }
 
     const formChange = (e) => {
