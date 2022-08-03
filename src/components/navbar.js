@@ -6,7 +6,7 @@ const Navbar = ({ isOpen, menuAction }) => {
     const nav = useRef()
 
     useEffect(() => {
-        handleMenu()
+
     }, [isOpen])
 
     const handleMenu = () => {
