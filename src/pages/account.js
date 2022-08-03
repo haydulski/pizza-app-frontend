@@ -20,7 +20,7 @@ const Account = () => {
     const handleLogout = () => {
         axios.post('api/logout')
             .then(res => {
-                return router.push('/login')
+                return router.reload()
             })
     }
 

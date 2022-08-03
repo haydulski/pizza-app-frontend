@@ -23,7 +23,7 @@ const Register = () => {
 
         axios.post('api/register', form)
             .then(res => {
-                if (res.status === 200) return router.push('/account')
+                if (res.status === 200) return router.reload()
 
             })
         // .catch(err => console.log(err))
