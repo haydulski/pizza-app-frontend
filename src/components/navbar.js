@@ -21,10 +21,10 @@ const Navbar = ({ isOpen, menuAction }) => {
     }
 
     const mouseEnter = () => {
-        if (isOpen === 'close') menuAction()
+        if (isOpen === 'close') { return menuAction() }
     }
     const mouseLeave = () => {
-        if (isOpen === 'open') menuAction()
+        if (isOpen === 'open') { return menuAction() }
     }
 
     return (
