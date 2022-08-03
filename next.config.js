@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ['pizza.obrazkontrolny.pl', 'localhost'],
   },
+  extends: [
+    'plugin:@next/next/recommended',
+  ],
 }
 
 module.exports = nextConfig
