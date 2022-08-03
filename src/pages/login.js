@@ -16,7 +16,7 @@ const Login = () => {
         axios.post('api/login', form)
             .then(res => {
                 if (res.status === 200) {
-                    return route.push('/account')
+                    return route.reload()
                 }
                 displayMessage('Wrong email or password', true)
             })

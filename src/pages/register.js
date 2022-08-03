@@ -20,6 +20,9 @@ const Register = () => {
         if (!form.name || !form.email) {
             return alert('Please fill all fields !')
         }
+        if (form.password || form.password.lenth < 5) {
+            return alert('Password is too short !')
+        }
 
         axios.post('api/register', form)
             .then(res => {
