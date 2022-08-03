@@ -6,12 +6,12 @@ const Navbar = ({ isOpen, menuAction }) => {
     const nav = useRef()
 
     useEffect(() => {
-
+        handleMenu()
     }, [isOpen])
 
     const handleMenu = () => {
 
-        if (nav.current.classList.contains('-translate-x-12')) {
+        if (isOpen === 'close') {
             nav.current.classList.remove('-translate-x-12')
             nav.current.classList.add('-translate-x-96')
         } else {
