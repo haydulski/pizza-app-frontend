@@ -21,7 +21,7 @@ export default function Home() {
                 <meta name="description" content="Next app pizza application" />
             </Head>
 
-            <div className="max-w-6xl mx-auto pt-60 translate-y-20 opacity-0 text-center" ref={img}>
+            <div className="max-w-6xl mx-auto pt-36 lg:pt-60 translate-y-20 opacity-0 text-center" ref={img}>
                 <Image src={ladingImg} alt="Pizza banner"
                     height={500} />
             </div>

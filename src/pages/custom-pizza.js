@@ -141,7 +141,7 @@ const Custom = ({ addCustomProduct }) => {
                 <title>Pizza customizer</title>
                 <meta name="description" content="Create your own pizza"></meta>
             </Head>
-            <h1 className='lg:text-6xl md:text-4xl font-semibold text-dark-orange uppercase'>YOUR CUSTOM PIZZA GENERATOR
+            <h1 className='text-4xl lg:text-6xl font-semibold text-dark-orange uppercase'>YOUR CUSTOM PIZZA GENERATOR
             </h1>
             <div className='flex px-2 py-2 mt-10 flex-wrap'>
                 <div className='col1 min-w-full md:min-w-[50%] lg:min-w-[25%]  border-r-2 pr-2 border-orange'>
@@ -153,14 +153,14 @@ const Custom = ({ addCustomProduct }) => {
                      transition-color duration-100 hover:bg-red rounded-md' onClick={showAdd}>
                         + Add ingredient
                     </button>
-                    <ul className='ingredients list-none pl-10 mt-8 text-orange text-2xl'>
+                    <ul className='ingredients list-none pl-0 lg:pl-10 mt-8 text-orange text-2xl'>
                         {addedIngs()}
                     </ul>
-                    <div className="absolute bottom-0 lg:-bottom-8 font-bold text-dark-orange text-3xl uppercase left-8">
+                    <div className="static lg:absolute my-4 bottom-0 lg:-bottom-8 font-bold text-dark-orange text-3xl uppercase left-8">
                         Total cost: ${costs}
                     </div>
                     <div ref={modal} className="modal rounded-md shadow-3xl
-                     bg-white fixed top-40 w-[400px] max-h-96 overflow-x-hidden
+                     bg-white fixed top-40 w-[340px] lg:w-[400px] max-h-96 overflow-x-hidden
                       left-1/2 -translate-x-1/2 z-50 hidden overscroll-y-auto ">
                         <span onClick={showAdd} className='ml-[90%] pt-4 font-semibold
                          cursor-pointer text-red block'>X</span>
