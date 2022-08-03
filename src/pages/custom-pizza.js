@@ -6,6 +6,7 @@ import Inputs from '../components/CustomizerInputs'
 import { connect } from 'react-redux'
 import { addCustomProduct } from '../../actions'
 import { displayMessage } from '../lib/displayMessage'
+import Head from 'next/head'
 
 const Custom = ({ addCustomProduct }) => {
 
@@ -136,6 +137,10 @@ const Custom = ({ addCustomProduct }) => {
 
     return (
         <div className="max-w-7xl mx-auto bg-light-gray mt-12 px-10 py-20 shadow-2xl mb-40 rounded-md">
+            <Head>
+                <title>Pizza customizer</title>
+                <meta name="description" content="Create your own pizza"></meta>
+            </Head>
             <h1 className='lg:text-6xl md:text-4xl font-semibold text-dark-orange uppercase'>YOUR CUSTOM PIZZA GENERATOR
             </h1>
             <div className='flex px-2 py-2 mt-10 flex-wrap'>

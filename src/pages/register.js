@@ -40,6 +40,10 @@ const Register = () => {
     return (
 
         <div className="flex flex-col mt-20">
+            <Head>
+                <title>register account</title>
+                <meta name="description" content="Here you can register your account"></meta>
+            </Head>
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="px-6 pb-8 rounded shadow-md text-black w-full">
                     <h1 className="mb-8 text-3xl text-center font-semibold text-dark-orange">Sign up</h1>

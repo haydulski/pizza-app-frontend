@@ -5,6 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { axios } from '../../lib/axios'
 import { useDispatch } from 'react-redux'
 import { displayMessage } from '../../lib/displayMessage'
+import Head from 'next/head'
 
 export async function getStaticPaths() {
     const res = await axios('api/pizza')
@@ -48,6 +49,10 @@ const Pizza = ({ data }) => {
 
     return (
         <div className='container max-w-7xl bg-light-gray py-20 px-10 mx-auto mt-12'>
+            <Head>
+                <title>{data.name}</title>
+                <meta name="description" content="Best pizza in all country is ready to order for you!"></meta>
+            </Head>
             <h1 className='text-orange font-semibold uppercase text-4xl lg:text-6xl'>{data.name}</h1>
             <div className='desc grid gap-2 lg:grid-cols-2 md:grid-cols-1 p-4  mt-10'>
                 <div className='pizza-image min-h-[500px]  pr-4 flex items-center

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import SingleMenuItem from '../components/SingleMenuItem'
 import { axios } from '../lib/axios'
+import Head from 'next/head'
 
 export async function getStaticProps() {
     // Fetch data from external API
@@ -22,6 +23,10 @@ const Menu = ({ data }) => {
 
     return (
         <div className="max-w-7xl mx-auto bg-orange px-10 py-20 rounded-md mt-20 shadow-2xl mb-48">
+            <Head>
+                <title>Pizza | Menu</title>
+                <meta name="description" content="Pizza menu. Find your best pizza for meal"></meta>
+            </Head>
             <h1 className='text-3xl lg:text-6xl font-bold text-green'>Our Menu</h1>
             <div className='container grid gap-1 lg:gap-10 xl:grid-cols-2 pt-20 lg:grid-cols-1'>
                 {items()}

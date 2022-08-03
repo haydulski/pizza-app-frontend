@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useRouter } from 'next/router'
 import { displayMessage } from '../lib/displayMessage'
+import Head from 'next/head'
 
 import UserUpdate from '../components/UserUpdateModal'
 
@@ -42,6 +43,10 @@ const Account = () => {
 
     return (
         <div className="max-w-7xl mx-auto bg-light-gray mt-10 px-8 py-20">
+            <Head>
+                <title>My account</title>
+                <meta name="description" content="Your account details"></meta>
+            </Head>
             <h1 className='text-6xl font-bold text-red'>My Account</h1>
             <div className="container flex flex-wrap gap-4 mt-8 w-full min-w-full">
                 <div className="bg-green rounded-md shadow-lg text-dark-orange w-full lg:w-[49%] p-4">

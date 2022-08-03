@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { removeProduct, resetCart } from '../../actions'
 import axios from 'axios'
 import { displayMessage } from '../lib/displayMessage'
+import Head from 'next/head'
 
 const Cart = ({ cart, removeProduct, resetCart }) => {
 
@@ -33,6 +34,10 @@ const Cart = ({ cart, removeProduct, resetCart }) => {
 
     return (
         <div className="text-2xl px-8 py-20 max-w-7xl mx-auto mt-8 rounded-md bg-light-gray shadow-xl">
+            <Head>
+                <title>Pizza | cart</title>
+                <meta name="description" content="Your cart details"></meta>
+            </Head>
             <h1 className='lg:text-6xl md:text-3xl text-red font-bold
               uppercase mt-5'>My cart</h1>
             <div className="items mt-4 border-t-2 w-full border-gray-300">
