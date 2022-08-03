@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Logo from '../../../public/logo-min.png'
-import Navbar from '../navbar'
-import MiniCart from '../miniCart.js'
+import Navbar from '../Navbar'
+import MiniCart from '../MiniCart.js'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 

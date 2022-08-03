@@ -16,8 +16,8 @@ const Register = () => {
 
     const handleRegister = async () => {
 
-        const formInputs = form.find(inp => inp === null)
-        if (formInputs.length > 0) {
+
+        if (!form.name || !form.email) {
             return alert('Please fill all fields !')
         }
 
