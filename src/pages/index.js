@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { gsap } from "gsap"
@@ -25,7 +25,6 @@ export default function Home() {
                 <Image src={ladingImg} alt="Pizza banner"
                     height={500} />
             </div>
-
         </>
     )
 }

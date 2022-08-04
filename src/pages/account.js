@@ -51,6 +51,7 @@ const Account = () => {
                 <title>My account</title>
                 <meta name="description" content="Your account details"></meta>
             </Head>
+
             <h1 className='text-6xl font-bold text-red'>My Account</h1>
             <div className="container flex flex-wrap gap-4 mt-8 w-full min-w-full">
                 <div className="bg-green rounded-md shadow-lg text-dark-orange w-full lg:w-[49%] p-4">

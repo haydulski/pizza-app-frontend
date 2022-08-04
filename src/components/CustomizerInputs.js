@@ -58,7 +58,7 @@ const CustomizerInputs = ({ handleOrder }) => {
             </div>
 
         </div>
-    );
+    )
 }
 
 export default CustomizerInputs;

@@ -15,9 +15,9 @@ export default async function handler(req, res) {
             path: '/'
         }
         )
-    ]);
+    ])
 
     return res.status(200).json({
         success: 'Successfully logged out'
-    });
+    })
 }

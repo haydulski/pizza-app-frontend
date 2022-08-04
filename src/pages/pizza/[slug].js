@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { axios } from '../../lib/axios'
 import { useDispatch } from 'react-redux'
@@ -10,7 +9,6 @@ import Head from 'next/head'
 export async function getStaticPaths() {
     const res = await axios('api/pizza')
     const data = await res.data
-
     const paths = data.map((pizza) => ({
         params: { slug: pizza.slug },
     }))
@@ -23,6 +21,7 @@ export async function getStaticProps({ params }) {
     const res = await axios('api/pizza/' + params.slug)
     const data = await res.data
     if (res.status !== 200) return { props: { data: 'pizza missing' }, revalidate: 10 }
+
     return { props: { data } }
 }
 
@@ -86,7 +85,7 @@ const Pizza = ({ data }) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default Pizza;

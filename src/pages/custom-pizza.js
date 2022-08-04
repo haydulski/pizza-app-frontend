@@ -79,53 +79,52 @@ const Custom = ({ addCustomProduct }) => {
         let ingCosts = 0
         if (order.doughSize == '38') { base += 1 }
         if (order.doubleCheese == 'yes') {
-
             base += 1
         }
         if (order.ingredients.length > 0) {
             ingCosts = order.ingredients.reduce((acc, ing) => { return acc + (ing.cost * ing.qty) }, 0)
             base += ingCosts
         }
+
         setCosts(base);
     }
 
     // display functions
 
     const displayIng = (ings) => {
-        return ings.map(i => {
-            return (
-                <div id={i.id} key={i.id}
-                    className='bg-gray-100 px-4 py-5 sm:grid
+        return ings.map(i =>
+        (
+            <div id={i.id} key={i.id}
+                className='bg-gray-100 px-4 py-5 sm:grid
                  sm:grid-cols-3 sm:gap-4 sm:px-6 border-b-2'>
-                    <p>{i.id}</p>
-                    <dd onClick={() => addIng(i.name, i.cost)}
-                        className="mt-1 text-sm text-black text-base
+                <p>{i.id}</p>
+                <dd onClick={() => addIng(i.name, i.cost)}
+                    className="mt-1 text-sm text-black text-base
                          capitalize sm:mt-0 sm:col-span-2 cursor-cell">
-                        {i.name}
-                    </dd>
-                </div>
-            )
-        })
+                    {i.name}
+                </dd>
+            </div>
+        )
+        )
     }
 
     const addedIngs = () => {
-        return order.ingredients.map((ii, key) => {
-            return (
-                <li key={key} className="my-2 flex justify-between">
-                    {ii.qty} - {ii.name}
-                    <div>
-                        <span className='px-1 bg-orange text-green rounded-md select-none
+        return order.ingredients.map((ii, key) => (
+            <li key={key} className="my-2 flex justify-between">
+                {ii.qty} - {ii.name}
+                <div>
+                    <span className='px-1 bg-orange text-green rounded-md select-none
                          font-regular  cursor-pointer' onClick={() => changeQty(ii.name, ii.cost, true)}>
-                            +
-                        </span>
-                        <span className='px-2 bg-orange text-green rounded-md select-none
+                        +
+                    </span>
+                    <span className='px-2 bg-orange text-green rounded-md select-none
                          font-regular ml-2 cursor-pointer' onClick={() => changeQty(ii.name, ii.cost, false)}>
-                            -
-                        </span>
-                    </div>
-                </li>
-            )
-        })
+                        -
+                    </span>
+                </div>
+            </li>
+        )
+        )
     }
 
     // order 
@@ -141,7 +140,9 @@ const Custom = ({ addCustomProduct }) => {
                 <title>Pizza customizer</title>
                 <meta name="description" content="Create your own pizza"></meta>
             </Head>
-            <h1 className='text-4xl lg:text-6xl font-semibold text-dark-orange uppercase'>YOUR CUSTOM PIZZA GENERATOR
+
+            <h1 className='text-4xl lg:text-6xl font-semibold text-dark-orange uppercase'>
+                YOUR CUSTOM PIZZA GENERATOR
             </h1>
             <div className='flex px-2 py-2 mt-10 flex-wrap'>
                 <div className='col1 min-w-full md:min-w-[50%] lg:min-w-[25%]  border-r-2 pr-2 border-orange'>
@@ -165,31 +166,29 @@ const Custom = ({ addCustomProduct }) => {
                         <span onClick={showAdd} className='ml-[90%] pt-4 font-semibold
                          cursor-pointer text-red block'>X</span>
                         <dl>
-                            {ing && ing.map(cat => {
-                                return (
-                                    <div key={cat.id}>
-                                        <h5 className='ml-6 text-lg font-semibold font-red py-2
+                            {ing && ing.map(cat => (
+                                <div key={cat.id}>
+                                    <h5 className='ml-6 text-lg font-semibold font-red py-2
                                          capitalize'>{cat.category}</h5>
-                                        {displayIng(cat.ingredients)}
-                                    </div>
-                                )
-                            })}
+                                    {displayIng(cat.ingredients)}
+                                </div>
+                            )
+                            )}
                         </dl>
                     </div>
                 </div>
                 <div className='col3 min-w-full md:min-w-[50%] lg:min-w-[25%]'>
                     <Image src={img} alt='order image' width={500} height={300} />
-
                 </div>
-
             </div>
+
             <div className='text-right'>
                 <button className='font-semibold text-light-gray hover:bg-dark-orange transition duration-100
                      bg-red text-3xl py-2 px-4 rounded-md mt-20' onClick={placeOrder}>
                     Add to cart</button>
             </div>
         </div>
-    );
+    )
 }
 
 export default connect((state) => { return state }, { addCustomProduct })(Custom);

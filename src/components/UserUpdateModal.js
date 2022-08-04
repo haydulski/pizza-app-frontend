@@ -104,7 +104,7 @@ const UserUpdate = ({ isUpdate, hide }) => {
                 </button>
             </div>
         </div>
-    );
+    )
 }
 
 export default UserUpdate;

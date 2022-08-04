@@ -69,7 +69,7 @@ const Navbar = ({ isOpen, menuAction }) => {
 
             </div>
         </>
-    );
+    )
 }
 
 export default Navbar;

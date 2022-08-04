@@ -20,7 +20,7 @@ export default async function handler(req, res) {
                 sameSite: 'lax',
                 path: '/'
             })
-            res.setHeader('Set-Cookie', [serialized, vendor]).status(200).json('token dodany')
+            res.setHeader('Set-Cookie', [serialized, vendor]).status(200).json('token added')
             res.end(res.getHeader('Set-Cookie'))
         })
         .catch(err => {

@@ -16,8 +16,6 @@ const Register = () => {
     })
 
     const handleRegister = async () => {
-
-
         if (!form.name || !form.email) {
             return alert('Please fill all fields !')
         }
@@ -34,16 +32,15 @@ const Register = () => {
 
     const formChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value.toString() })
-        // console.log(form);
     }
 
     return (
-
         <div className="flex flex-col mt-20">
             <Head>
-                <title>register account</title>
+                <title>Pizza | Register</title>
                 <meta name="description" content="Here you can register your account"></meta>
             </Head>
+
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="px-6 pb-8 rounded shadow-md text-black w-full">
                     <h1 className="mb-8 text-3xl text-center font-semibold text-dark-orange">Sign up</h1>
@@ -60,7 +57,6 @@ const Register = () => {
                         onChange={formChange}
                         placeholder="Surname"
                     />
-
                     <input
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4 focus:ring-orange"
@@ -68,7 +64,6 @@ const Register = () => {
                         placeholder="Email"
                         onChange={formChange}
                     />
-
                     <input
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4 focus:ring-orange"
@@ -81,13 +76,11 @@ const Register = () => {
                         name="password_confirmation"
                         onChange={formChange}
                         placeholder="Confirm Password" />
-
                     <button
                         type="submit"
                         className="w-full text-center py-3 rounded bg-dark-orange text-white
                          hover:bg-orange focus:outline-none my-1" onClick={handleRegister}
                     >Create Account</button>
-
                     <div className="text-center text-sm text-grey-dark mt-4">
                         By signing up, you agree to the
                         <a className="no-underline border-b border-grey-dark text-grey-dark" href="#">
@@ -98,7 +91,6 @@ const Register = () => {
                         </a>
                     </div>
                 </div>
-
                 <div className="text-grey-dark mt-6">
                     Already have an account?
                     <Link href="/login">
@@ -109,7 +101,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default Register;

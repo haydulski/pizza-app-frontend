@@ -8,9 +8,9 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Layout = ({ children }) => {
 
-    const [openNav, setnav] = useState('close');
+    const [openNav, setnav] = useState('close')
     const handleMenu = () => {
-        setnav(openNav === 'open' ? 'close' : 'open');
+        setnav(openNav === 'open' ? 'close' : 'open')
     }
 
     return (
@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
                 <Navbar isOpen={openNav} menuAction={handleMenu} />
                 <MiniCart />
             </header>
-
             <main>
                 {children}
             </main>

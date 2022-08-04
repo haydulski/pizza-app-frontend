@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { displayMessage } from '../lib/displayMessage'
+import Head from 'next/head'
 
 const Login = () => {
 
@@ -28,6 +29,11 @@ const Login = () => {
 
     return (
         <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+            <Head>
+                <title>Pizza | Login</title>
+                <meta name="description" content="login to your Pizza application" />
+            </Head>
+
             <div className="max-w-md w-full space-y-8">
                 <div>
                     <h2 className="mt-6 text-center text-3xl font-bold
@@ -90,7 +96,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default Login;
