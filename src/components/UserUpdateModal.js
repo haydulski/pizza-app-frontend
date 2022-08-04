@@ -41,8 +41,8 @@ const UserUpdate = ({ isUpdate, hide }) => {
 
     return (
         <div id='modal' className="fixed top-0 left-0 w-screen bg-opacity-black h-screen z-50" onClick={handleHide}>
-            <div className="absolute min-w-1/2 shadow-2xl bg-gray-100 px-6
-         py-8 -translate-x-1/2 left-1/2 top-[20vh] rounded-lg z-[60] min-w-[50%]" >
+            <div className="absolute min-w-[90%] lg:min-w-1/2 shadow-2xl bg-gray-100 px-2 lg:px-6 max-h-[90vh]
+         py-8 -translate-x-1/2 left-1/2 top-[4vh] lg:top-[20vh] rounded-lg z-[60]" >
                 <input
                     type="text"
                     className="block border border-grey-light w-full p-3 rounded mb-4 focus:ring-orange"
